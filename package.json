@@ -1,0 +1,18 @@
+{
+  "name": "Koa-learn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node bin/www.js",
+    "server": "cross-env NODE_ENV=development nodemon bin/www.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cross-env": "^5.2.0",
+    "koa": "^2.7.0",
+    "nodeenv": "^1.0.0"
+  }
+}
