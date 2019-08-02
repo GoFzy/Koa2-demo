@@ -12,8 +12,11 @@
   "license": "ISC",
   "devDependencies": {
     "cross-env": "^5.2.0",
+    "ejs": "^2.6.2",
     "koa": "^2.7.0",
+    "koa-bodyparser": "^4.2.1",
     "koa-router": "^7.4.0",
+    "koa-views": "^6.2.0",
     "nodeenv": "^1.0.0",
     "nodemon": "^1.19.1"
   }

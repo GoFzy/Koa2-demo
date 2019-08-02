@@ -9,7 +9,6 @@ const router = new Router();
  */
 router.get('/', async (ctx, next) => {
   ctx.body = 'router使用'
-  next();
 })
 
 /**
