@@ -1,12 +1,12 @@
-const Koa = require('koa');
-const Router = require('koa-router');
-const bodyParser = require('koa-bodyparser');
+import Koa from 'koa';
+import Router from 'koa-router';
+import bodyParser from 'koa-bodyparser';
 
 const app = new Koa();
 const router = new Router();
 
 //引入子模块路由
-const admin = require('./routes/admin');
+import admin from './routes/admin';
 
 app.use(bodyParser());
 

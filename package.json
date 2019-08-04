@@ -4,13 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node bin/www.js",
+    "start": "nodemon bin/www.js",
     "server": "cross-env NODE_ENV=development nodemon bin/www.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/register": "^7.5.5",
     "art-template": "^4.13.2",
     "cross-env": "^5.2.0",
     "ejs": "^2.6.2",
@@ -23,5 +26,8 @@
     "koa-views": "^6.2.0",
     "nodeenv": "^1.0.0",
     "nodemon": "^1.19.1"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.4.4"
   }
 }
