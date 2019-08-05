@@ -1,7 +1,8 @@
 require('@babel/register') ({
-  presets: ['@babel/env']
+  presets: ['@babel/env'],
+  plugins: ['@babel/plugin-transform-runtime']
 })
 
-require('@babel/polyfill');
+// require('@babel/polyfill');
 
 module.exports = require('../app');

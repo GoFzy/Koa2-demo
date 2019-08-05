@@ -20,15 +20,15 @@ render(app, {
   debug: process.env.NODE_ENV !== 'production'  //是否开启调试模式
 })
 
-//配置应用级 & 第三方 &错误处理中间件
+//配置应用级 & 第三方 & 错误处理中间件
 app
-  // .use( async (ctx, next)=> {
-  //   next();
-  //   if(ctx.status === 404) {
-  //     ctx.status = 404;         //由于错误处理中间件的存在，需要重新设置一下状态码
-  //     ctx.body = '未找到该页面'
-  //   }
-  // })
+  .use(async (ctx, next) => {
+    await next();
+    if (ctx.status === 404) {
+      ctx.status = 404;         //由于错误处理中间件的存在，需要重新设置一下状态码
+      ctx.body = '未找到该页面'
+    }
+  })
   .use(bodyParser())
   .use(loadStat())
   .use(staticFile(path.resolve(__dirname, 'pbulic')));
@@ -39,7 +39,7 @@ router.use('/admin', admin.routes());
 
 app
   .use(router.routes())
-  .use(router.allowedMethods());
+  .use(router.allowedMethods())
 
 
 app.listen(3000, () => {
