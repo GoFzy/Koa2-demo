@@ -154,7 +154,12 @@ npm install --save @babel/polyfill
 该插件会在我们的源代码之前运行，所以需要将它作为 `dependency` 安装。需要注意的是，`@babel/polyfill` 的工作原理是当运行环境中并没有实现一些方法时，该插件会给其做兼容，即直接在对象的原型链上增加方法。这样做的缺点是会污染全局变量，而且这样项目打包后体积会增加很多。
 
 ### 4.4 @babel/plugin-transform-runtime
-该插件是针对 `@babel/polyfill` 插件做的一个改良插件，为了不污染全局对象和内置的对象原型，但同时又想体验新鲜语法，就可以是该插件。  
+该插件是针对 `@babel/polyfill` 插件做的一个改良插件，为了不污染全局对象和内置的对象原型，但同时又想体验新鲜语法，就可以使用该插件  
+```sh
+npm install --save-dev @babel/plugin-transform-runtime
+npm install --save @babel/runtime  
+```
+**注意**：前者是开发环境依赖，后者是生产环境依赖  
 **不足**：不能转码实例方法，比如:
 ```js
 '!!!'.repeat(3);
@@ -162,7 +167,7 @@ npm install --save @babel/polyfill
 ```
 这时就只能使用 `babel-polyfill`插件。  
 
-关于 `babel`，在本系统中只是简单的使用，具体介绍可以去[官网](https://www.babeljs.cn/docs/)详细阅读。  
+关于 `babel`，在本系统中只是简单的使用，具体介绍可以去[官网详细阅读](https://www.babeljs.cn/docs/)  
 其他 `babel` 参考文章：
 * @babel-register  https://www.babeljs.cn/docs/babel-register
 * @babel/preset-env  https://www.babeljs.cn/docs/babel-preset-env
