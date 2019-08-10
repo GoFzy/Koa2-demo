@@ -1,4 +1,5 @@
 # Koa最小系统搭建
+本项目重点是使用 `Koa2` 框架，关于 `Koa2` 源码学习可以在我的博客上进行阅读 <http://gofzy.com/source-code/koa2/>
 
 ## 一、目录结构
 ```sh
@@ -10,6 +11,11 @@ Koa-demo
 |—— public                静态资源目录
 |—— views                 渲染模板目录
 |—— app.js                服务启动入口
+```
+
+**使用说明**
+```sh
+npm run start #启动服务
 ```
 
 ## 二、路由的定义
@@ -33,8 +39,6 @@ import home from './routes/home';
 .....
 router.use('/', home.routes());
 ```
-
-补充`koa-router` 学习资料：https://github.com/zhangxiang958/zhangxiang958.github.io/issues/38
 
 ## 三、中间件的定义
 最小系统中一共使用了四类中间件:
