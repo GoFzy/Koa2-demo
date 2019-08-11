@@ -3,14 +3,14 @@ import userAgent from '../middleware/user_agent';
 
 const router = new Router();
 
-router.get('/', async (ctx) => {
+router.get('/users', userAgent(), async(ctx) => {
   await ctx.render('template',{
     title: `koa-demo${ctx.url}`,
     body: `当前访问路径:${ctx.host + ctx.url}`,
   })
 })
 
-router.get('/users', userAgent(), async(ctx) => {
+router.get('/', async (ctx) => {
   await ctx.render('template',{
     title: `koa-demo${ctx.url}`,
     body: `当前访问路径:${ctx.host + ctx.url}`,

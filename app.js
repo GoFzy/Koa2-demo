@@ -12,6 +12,7 @@ const router = new Router();
 //引入子模块路由
 import admin from './routes/admin';
 import home from './routes/home';
+import dynamic from './routes/dynamic';
 
 //配置模板引擎
 render(app, {
@@ -36,6 +37,7 @@ app
 //配置子路由，层级路由--下例中以/admin 为入口，进入admin文件继续匹配路由
 router.use('/', home.routes());
 router.use('/admin', admin.routes());
+router.use('/dynamic', dynamic.routes());
 
 app
   .use(router.routes())
