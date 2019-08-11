@@ -13,6 +13,7 @@ const router = new Router();
 import admin from './routes/admin';
 import home from './routes/home';
 import dynamic from './routes/dynamic';
+import prefix from './routes/prefix';
 
 //配置模板引擎
 render(app, {
@@ -38,6 +39,7 @@ app
 router.use('/', home.routes());
 router.use('/admin', admin.routes());
 router.use('/dynamic', dynamic.routes());
+router.use('/prefix', prefix.routes());
 
 app
   .use(router.routes())
